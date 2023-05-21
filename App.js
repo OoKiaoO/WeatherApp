@@ -9,22 +9,22 @@ import { useGetWeather } from "./src/hooks/useGetWeather";
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 const App = () => {
-  const [loading, error, weather] = useGetWeather();
-  console.log(loading, error, weather);
+  const [loading, weather, error] = useGetWeather(); // NNED TO IMPORT THEM IN THE SAME ORDER AS THE EXPORT!!
+  // console.log(weather, "weather");
 
-  if (loading) {
+  if (weather && weather.list) {
+    return (
+      <NavigationContainer>
+        <Tabs weather={weather} />
+      </NavigationContainer>
+    )
+  } else {
     return (
       <View style={styles.container}>
         <ActivityIndicator size={'large'} color={'blue'} />
       </View>
     )
   }
-
-  return (
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
-  )
 }
 
 const styles = StyleSheet.create({

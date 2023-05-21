@@ -14,7 +14,7 @@ export const useGetWeather = () => {
             const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`);
             const data = await res.json();
             setWeather(data);
-            console.log(data, "data");
+            // console.log(data, "data");
         } catch (e) {
             setError('Could not fetch weather!');
         } finally {
@@ -38,5 +38,5 @@ export const useGetWeather = () => {
     }, [lat, lon])
     // we pass an empty array into useEffect to mean there are no dependencies and useEffect will only run once after is rendered
 
-    return [loading, weather, error];
+    return [loading, weather, error]; // NEED TO EXPORT THEM IN THE SAME ORDER AS THE IMPORT!!
 }
