@@ -2,7 +2,7 @@ export const weatherType = {
     Thunderstorm: {
         icon: 'zap',
         message: 'It could get noisy!',
-        bcakgroundColor: '#000000'
+        backgroundColor: '#000000'
     },
     Drizzle: {
         icon: 'cloud-rain',

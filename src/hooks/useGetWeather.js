@@ -38,5 +38,5 @@ export const useGetWeather = () => {
     }, [lat, lon])
     // we pass an empty array into useEffect to mean there are no dependencies and useEffect will only run once after is rendered
 
-    return [loading, weather, error]; // NEED TO EXPORT THEM IN THE SAME ORDER AS THE IMPORT!!
+    return [loading, weather, false]; // NEED TO EXPORT THEM IN THE SAME ORDER AS THE IMPORT!!
 }

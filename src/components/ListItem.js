@@ -12,7 +12,7 @@ const ListItem = (props) => {
     //destructuring styles in order to remove styles.date, styles.item & styles.temp in the component styling
     return (
         <View style={item}>
-            <Feather name={weatherType[condition].icon} size={50} color={'white'} />
+            <Feather name={weatherType[condition]?.icon} size={50} color={'white'} />
             <View style={styles.dateTextWrapper}>
                 <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
                 <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         borderWidth: 5,
-        backgroundColor: 'pink'
+        backgroundColor: 'indianred'
     },
     temp: {
         color: 'white',
